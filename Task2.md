@@ -40,6 +40,8 @@ Add the next functionality to the Sub task1:
  - Must respond with a status 202 (Accepted) is returned if the server accepted the request, but the deletion has not been completed.
  - Must respond with a 404 (Not found) if no resource exists at the given URI.
 
+### Sub task3
+Add MUTEX support for the key-value storage project. Go's standard library provides mutual exclusion with **sync.Mutex**.
 
 
 ## IMPORTANT FOR EACH SUB TASK
