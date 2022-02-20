@@ -17,3 +17,7 @@ Compiled and optimized Brainfuck program must be executed in Golang. The output 
 
 ### Unit Tests and Documentation
 A good level of documentation and unit test coverage are required.
+
+### Useful Links
+https://en.wikipedia.org/wiki/Brainfuck
+https://www.dcode.fr/brainfuck-language
