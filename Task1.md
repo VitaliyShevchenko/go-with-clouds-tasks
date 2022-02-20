@@ -1,3 +1,7 @@
+## Pre requirements
+1. Tools needed for development: **go1.7**, **iTerm**, **git**, **IntelliJ IDEA**.
+2. IntelliJ IDEA should have next plugins installed: **golang**, **golint**, **markdown**, **git**, **github**, **key promoter x**.
+
 ## Brainfuck Compiler
 
 ### Task Description
