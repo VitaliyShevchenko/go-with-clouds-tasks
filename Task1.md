@@ -1,11 +1,14 @@
 ## Pre requirements
-1. Tools needed for development: **go1.7**, **iTerm**, **git**, **IntelliJ IDEA**.
+1. Tools needed for development: **go1.17**, **iTerm**, **git**, **IntelliJ IDEA**.
 2. IntelliJ IDEA should have next plugins installed: **golang**, **golint**, **markdown**, **git**, **github**, **key promoter x**.
 
 ## Brainfuck Compiler
 
 ### Task Description
-Implement Brainfuck compiler. The following phases have to be supported: syntax analysis, optimization, execution in Golang, code generation.
+Implement Brainfuck interpreter. Specification of the language can be found on Wiki: https://en.wikipedia.org/wiki/Brainfuck.
+Implementation should be readable, maintainable and easily extendable 
+so that it is easy to add a new command to the language by just a small number of modifications.
+The following phases have to be supported: syntax analysis, optimization, execution in Golang, code generation.
 
 ### Input Parameters
 Command-line parameter specifying the path to the file that contains the Brainfuck program.
