@@ -1,46 +1,55 @@
-## Pre requirements
-1. Tools needed for development: **go1.17**, **iTerm**, **git**, **IntelliJ IDEA**.
-2. IntelliJ IDEA should have next plugins installed: **golang**, **golint**, **markdown**, **git**, **github**, **key promoter x**.
+# Brainfuck Interpreter project
 
-## Brainfuck Interpreter
+### Pre requirements
+
+1. Tools needed for development: **go1.17**, **iTerm**, **git**, **IntelliJ IDEA**.
+2. IntelliJ IDEA should have next plugins installed:
+   **golang**, **golint**, **markdown**, **git**, **github**, **key promoter x**.
 
 ### Project Description
+
 Implement Brainfuck interpreter.  
-Specification of the language can be found on Wiki: https://en.wikipedia.org/wiki/Brainfuck.
-Implementation should be readable, maintainable and easily extendable 
-so that it is easy to add a new command to the language by just a small number of modifications.
-For the first phase of development we can skip the `,` input operator.
+Specification of the language can be found on Wiki: https://en.wikipedia.org/wiki/Brainfuck. Implementation should be readable,
+maintainable and easily extendable so that it is easy to add a new command to the language by just a small number of
+modifications. For the first phase of development we can skip the `,` input operator.
 
 ### Input Parameters
+
 Command-line parameter specifying the path to the file that contains the Brainfuck program.
 
 ### Testing
-Execute the simple Hello world program in Brainfuck and verify the correct output.
+
+Execute the simple Hello world program in Brainfuck and verify the correct output:
 
     ++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.
 
+You can use [online brainfuck interpreter](https://www.dcode.fr/brainfuck-language) to verify your results against when executing
+different brainfuck programs.
+
 ### Unit Tests and Documentation
+
 A good level of documentation and unit test coverage are required.
 
-### Additional tasks
-* Add a new commands, where the chains of the same commands can be replaced by a single command that performs aggregated action, 
-e.g. “+++++” chain must be replaced by a single command that performs “increment by 5” operation.
+### Advanced features
+
+* Add a new command where the chains of the same commands can be replaced by a single command that performs aggregated action,
+  e.g. “+++++” chain must be replaced by a single command that performs “increment by 5” operation
+  (you can come up with any other command).
 * Allow empty spaces and line breaks in the input for the brainfuck interpreter.
 
-### Useful Links
-https://en.wikipedia.org/wiki/Brainfuck
-https://www.dcode.fr/brainfuck-language
-
 ### Golang articles and docs
+
 * [Go modules and packages](https://levelup.gitconnected.com/using-modules-and-packages-in-go-36a418960556)
 * [Using Go modules](https://go.dev/blog/using-go-modules)
 * [Golang tips: why pointers to slices are useful and how ignoring them can lead to tricky bugs](https://medium.com/swlh/golang-tips-why-pointers-to-slices-are-useful-and-how-ignoring-them-can-lead-to-tricky-bugs-cac90f72e77b)
 
 ### Tasks
+
 * Create personal brainfuck repo on GitHub
 * Read about [GitFlow strategy](https://www.gitkraken.com/learn/git/best-practices/git-branch-strategy)
-* Implement basic Brainfuck interpreter in a feature branch, open PR
+* Implement Brainfuck interpreter according to **Project Description** in a feature branch, open PR
 * Read Golang articles and docs mentioned above
+* Implement **Advanced features**
 
 ### Supporting info materials
 * [A tour of Go](https://go.dev/tour/) - quick way to get familiar with GoLang syntax
