@@ -9,9 +9,11 @@
 ### Project Description
 
 Implement Brainfuck interpreter.  
-Specification of the language can be found on Wiki: https://en.wikipedia.org/wiki/Brainfuck. Implementation should be readable,
-maintainable and easily extendable so that it is easy to add a new command to the language by just a small number of
-modifications. For the first phase of development we can skip the `,` input operator.
+Specification of the language can be found on Wiki: https://en.wikipedia.org/wiki/Brainfuck.  
+Implementation should be readable, maintainable and easily extendable so that it is easy to add a new command to the language by
+just a small number of modifications. Avoid procedural programming and come up with the design which has abstractions for
+commands, memory, etc.  
+For the first phase of development we can skip the `,` input operator.
 
 ### Input Parameters
 
@@ -26,10 +28,6 @@ Execute the simple Hello world program in Brainfuck and verify the correct outpu
 You can use [online brainfuck interpreter](https://www.dcode.fr/brainfuck-language) to verify your results against when executing
 different brainfuck programs.
 
-### Unit Tests and Documentation
-
-A good level of documentation and unit test coverage are required.
-
 ### Advanced features
 
 * Add a new command where the chains of the same commands can be replaced by a single command that performs aggregated action,
@@ -37,11 +35,26 @@ A good level of documentation and unit test coverage are required.
   (you can come up with any other command).
 * Allow empty spaces and line breaks in the input for the brainfuck interpreter.
 
-### Golang articles and docs
+### Golang articles which are useful during implementation
 
 * [Go modules and packages](https://levelup.gitconnected.com/using-modules-and-packages-in-go-36a418960556)
 * [Using Go modules](https://go.dev/blog/using-go-modules)
 * [Golang tips: why pointers to slices are useful and how ignoring them can lead to tricky bugs](https://medium.com/swlh/golang-tips-why-pointers-to-slices-are-useful-and-how-ignoring-them-can-lead-to-tricky-bugs-cac90f72e77b)
+
+### Unit Tests and Documentation
+
+A good level of documentation and unit test coverage are required. Go through the following articles to get a basic understanding
+on how to write unit tests in Go:
+
+* [Go Test Your Code: An introduction to testing in Go](https://medium.com/rate-engineering/go-test-your-code-an-introduction-to-effective-testing-in-go-6e4f66f2c259)
+  - explains how to build a simple test
+* [An Introduction to Testing in Go](https://tutorialedge.net/golang/intro-testing-in-go/) - shows the basic unit tests and table
+  driven tests
+* [Advanced Go Testing Tutorial](https://tutorialedge.net/golang/advanced-go-testing-tutorial/) - shows how to separate unit and
+  integration tests
+* (Optional) Get familiar with BDD testing lib: [Ginkgo](https://onsi.github.io/ginkgo/)
+  and [Gomega](https://onsi.github.io/gomega/).  
+  It will be useful later on and it is used in our enterprise project.
 
 ### Tasks
 
@@ -50,8 +63,11 @@ A good level of documentation and unit test coverage are required.
 * Implement Brainfuck interpreter according to **Project Description** in a feature branch, open PR
 * Read Golang articles and docs mentioned above
 * Implement **Advanced features**
+* Add unit tests using standard Go `testing` library (use simple tests and table driven tests)
+  * `go test -cover` should be showing more than 80 percent coverage.
 
 ### Supporting info materials
+
 * [A tour of Go](https://go.dev/tour/) - quick way to get familiar with GoLang syntax
 * [Go By Example site](https://gobyexample.com/) - a way to quickly recall the Go syntax
 * "Go in Action" - a book to deep dive in Go
