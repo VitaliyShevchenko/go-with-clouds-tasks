@@ -41,10 +41,9 @@ different brainfuck programs.
 * [Using Go modules](https://go.dev/blog/using-go-modules)
 * [Golang tips: why pointers to slices are useful and how ignoring them can lead to tricky bugs](https://medium.com/swlh/golang-tips-why-pointers-to-slices-are-useful-and-how-ignoring-them-can-lead-to-tricky-bugs-cac90f72e77b)
 
-### Unit Tests and Documentation
+### Unit Tests
 
-A good level of documentation and unit test coverage are required. Go through the following articles to get a basic understanding
-on how to write unit tests in Go:
+Go through the following articles to get a basic understanding on how to write unit tests in Go:
 
 * [Go Test Your Code: An introduction to testing in Go](https://medium.com/rate-engineering/go-test-your-code-an-introduction-to-effective-testing-in-go-6e4f66f2c259)
   - explains how to build a simple test
@@ -65,6 +64,19 @@ on how to write unit tests in Go:
 * Implement **Advanced features**
 * Add unit tests using standard Go `testing` library (use simple tests and table driven tests)
   * `go test -cover` should be showing more than 80 percent coverage.
+
+### Best practices
+
+* Read and follow [Go standards for project layout](https://github.com/golang-standards/project-layout).
+* Use [.gitignore](https://git-scm.com/docs/gitignore) to avoid committing IDE, git files and other local development environment.
+* Learn how to write [Go docs](https://go.dev/blog/godoc) and add docs where necessary.
+* Learn [Go review comments conventions](https://gist.github.com/adamveld12/c0d9f0d5f0e1fba1e551#go-code-review-comments).
+* Learn [Effective Go](https://go.dev/doc/effective_go) conventions.
+* Learn [how to name packages](https://go.dev/blog/package-names).
+* Whenever developing a new Go module, always accompany it with a [README.md](https://www.makeareadme.com/) file with a proper
+  description.  
+  Follow this [guide](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/) to write a readme for the project.
+* Consult [DevIQ](https://deviq.com/) site for Clean Code principles and design patterns.
 
 ### Supporting info materials
 
