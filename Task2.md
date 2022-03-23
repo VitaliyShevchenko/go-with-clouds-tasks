@@ -6,8 +6,8 @@ in the Google Document. The Google Document should be shared with Vitalii Shevch
 Using the given IP addresses, you will have to:
 1. Determine which class of network they belong to
 2. Calculate a network IP address
-3. A netmask
-4. A broadcast IP address on the given network.
+3. Calculate a netmask
+4. Find a broadcast IP address on the given network.
 
 **IP addresses**:
 1. 192.168.0.106
