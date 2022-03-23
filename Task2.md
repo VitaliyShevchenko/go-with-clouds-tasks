@@ -20,6 +20,9 @@ Do the below IP addresses belong to the same subnet ?
 1. 127.73.18.240 - 137.114.177.17/9
 2. 47.88.172.145 - 47.88.178.192/21
 
+**Hint**: To find out if addresses belong to the same subnet, you need to get the address networks for each 
+of the addresses and compare the addresses of the networks.
+
 ### Exercise3
 Read must read topics/books.
 
