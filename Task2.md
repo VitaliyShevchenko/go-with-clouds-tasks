@@ -17,8 +17,8 @@ Using the given IP addresses, you will have to:
 ### Exercise2
 Do the below IP addresses belong to the same subnet ?
 **IP addresses**:
-1. 127.73.18.240 - 137.114.177.17/9
-2. 47.88.172.145 - 47.88.178.192/21
+1. 127.73.18.240 - 137.114.177.17. The mask is **9**
+2. 47.88.172.145 - 47.88.178.192. The mask is **21**
 
 **Hint**: To find out if addresses belong to the same subnet, you need to get the address networks for each 
 of the addresses and compare the addresses of the networks.
