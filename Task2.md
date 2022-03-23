@@ -1,6 +1,6 @@
 ## Networking exercises
 Exercise1 and Exercise2 should be solved **manually**, the solution of these tasks should be described and explained
-in the Google Document. The Google Document should be shared with Vitalii Shevchenko and Nikita Matrosov accounts.
+in the Google Document. The Google Document should be shared with Vitalii Shevchenko and Nikita Matrosov TeamDev accounts.
 
 ### Exercise1
 Using the given IP addresses, you will have to:
@@ -26,7 +26,7 @@ Read must read topics/books.
 ### Exercise4 **for experts** (very optional)
 Simulate first seven labs from here: https://www.packettracernetwork.com/labs/packettracerlabs.html in `PacketTracer` application.
 The result of this task should be a `.pka` file, which you will have to upload to a Google Drive and share access with
-Vitalii Shevchenko and Nikita Matrosov accounts.
+Vitalii Shevchenko and Nikita Matrosov TeamDev accounts.
 
 ## Must read books and topics 
 * "Network Programming with Go: Code Secure and Reliable Network Services from Scratch" — a book to deep dive in Networking and Go
