@@ -15,7 +15,7 @@ Build a simple, non-distributed key-value storage that can support the next thin
 #### Something to read
 [Cloud Native](https://cloudnative101.dev/concepts/cloud-native/)
 [How to design a good API](http://www.cs.bc.edu/~muller/teaching/cs102/s06/lib/pdf/api-design) — must read
-
+[API Design](https://www.infoq.com/articles/API-Design-Joshua-Bloch/)
 
 ### Sub task2 (HTTP server + REST API)
 Build a simple HTTP server/client for the key-value storage project.
