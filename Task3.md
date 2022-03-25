@@ -4,7 +4,7 @@ Key-value storage is a non-relational database that stores data as a collection 
 ### Sub task1 (Simple key-value storage)
 
 #### Description
-Build a simple, non-distributed key-value storage that can support the next thins:
+Build a simple, non-distributed key-value storage that can support the next things:
 1. It must be able to store key-value pairs.
 2. It must provide API for a user to put, get and delete key-value pairs.
 3. It must be steady and always be available for storing the data.
