@@ -6,16 +6,17 @@ Key-value storage is a non-relational database that stores data as a collection 
 #### Description
 Build a simple, non-distributed key-value storage that can support the next things:
 1. It must be able to store key-value pairs.
-2. It must provide API for a user to put, get and delete key-value pairs.
+2. It must provide API for a user to `put`, `get` and `delete` key-value pairs.
 3. It must be steady and always be available for storing the data.
 4. It must be idempotent. 
 
 **Note**: A good level of documentation and unit test coverage is required.
 
 #### Something to read
-[Cloud Native](https://cloudnative101.dev/concepts/cloud-native/)
-[How to design a good API](http://www.cs.bc.edu/~muller/teaching/cs102/s06/lib/pdf/api-design) — must read
-[API Design](https://www.infoq.com/articles/API-Design-Joshua-Bloch/)
+* [Cloud Native](https://cloudnative101.dev/concepts/cloud-native/)
+* [How to design a good API](http://www.cs.bc.edu/~muller/teaching/cs102/s06/lib/pdf/api-design) — must read
+* [Why Golang?](https://thechief.io/c/editorial/why-golang-is-widely-used-in-the-devops-and-cloud-native-space/)
+* [API Design](https://www.infoq.com/articles/API-Design-Joshua-Bloch/)
 
 ### Sub task2 (HTTP server + REST API)
 Build a simple HTTP server/client for the key-value storage project.
