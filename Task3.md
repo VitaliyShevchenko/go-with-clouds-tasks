@@ -21,14 +21,13 @@ Build a simple, non-distributed key-value storage that can support the next thin
 ### Sub task2 (HTTP server + REST API)
 Build a simple HTTP server/client for the key-value storage project.
 1. Create a Go server to handle HTTP requests. (using **net/http** library)
-2. Create a client for testing.
-3. Write a table with a specification for REST API. (see example below)
+2. Write a table with a specification for REST API. (see example below)
 
    | Functionality     | Method | URI    | Status code |
    |-------------------|--------|--------|------------ |
    | Create a user     | POST   | /users | 200         |
 
-4. Add the next handlers to the server: **GET**, **PUT**, **DELETE**.
+3. Add the next handlers to the server: **GET**, **PUT**, **DELETE**.
    **PUT**
 - Must only match PUT requests for **specific_uri** (you will have to choose the URI).
 - Must respond with a 201 (Created) when a key-value pair is created.
@@ -45,6 +44,15 @@ Build a simple HTTP server/client for the key-value storage project.
 - Must respond with a status 204 (No content) indicating a successful deletion with no additional information (response body is empty).
 - Must respond with a status 202 (Accepted) is returned if the server accepted the request, but the deletion has not been completed.
 - Must respond with a 404 (Not found) if no resource exists at the given URI.
+
+**Note**: A good level of documentation and unit test coverage is required.
+
+#### Something to read
+* [TCP Technical overview](https://medium.com/@jimmyclem/a-technical-overview-of-tcp-pt-1-62e777c0d01)
+* [Data serialization](https://towardsdatascience.com/what-why-and-how-of-de-serialization-in-python-2d4c3b622f6b)
+* [Data serialization formats](https://study-ccna.com/data-serialization-formats-json-yaml-xml/)
+* [URL & URI](https://danielmiessler.com/study/difference-between-uri-url/)
+* [GoLang & JSON](https://gobyexample.com/json)
 
 ### Sub task3 (Concurrency)
 Make key-value storage server concurrent save. Go's standard library provides mutual exclusion with **sync.Mutex**.
