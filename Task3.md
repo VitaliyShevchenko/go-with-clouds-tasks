@@ -48,6 +48,7 @@ Build a simple HTTP server/client for the key-value storage project.
 **Note**: A good level of documentation and unit test coverage is required.
 
 #### Something to read
+* [TCP/IP](https://www.objc.io/issues/10-syncing-data/ip-tcp-http/) — must read
 * [TCP Technical overview](https://medium.com/@jimmyclem/a-technical-overview-of-tcp-pt-1-62e777c0d01)
 * [Data serialization](https://towardsdatascience.com/what-why-and-how-of-de-serialization-in-python-2d4c3b622f6b)
 * [Data serialization formats](https://study-ccna.com/data-serialization-formats-json-yaml-xml/)
