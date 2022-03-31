@@ -69,11 +69,17 @@ So that any other processes will wait until the current process is finished. If 
 it should be **RLocked**(Read Locked).
 
 ### Sub task5 (Go templates)
-The HTTP server should have a REST API, which will return all data from the key-value storage. This REST API should be allowed 
-to return a **web page** (with all key pairs) in a pretty formatted and beautiful view. 
+The HTTP server should have a REST API, which will return all data from the key-value storage. This REST API should be allowed
+to return a **web page** (with all key pairs) in a pretty formatted and beautiful view. If the key-value storage is empty,
+an appropriate message should be shown to a user.
 
 **Small tip**: two packages are operating with templates in Go — **text/template** and **html/template**.
 Both provide the same interface, however, the **html/template** package is used to generate HTML output safe against code injection.
+
+#### Some examples of output
+![empty key-value storage](examples/empty%20key-value.png)
+![not empty key-value storage](examples/not-empty-key-value.png)
+
 
 ### Sub task6 (HTTPS server)
 HTTP data between server and client is not encrypted, so it can be intercepted by third parties to gather data passed from the server to the client.
