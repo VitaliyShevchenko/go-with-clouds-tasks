@@ -28,16 +28,16 @@ Build a simple HTTP server/client for the key-value storage project.
    | Create a user     | POST   | /users | 200         |
 
 3. Add the next handlers to the server: **GET**, **PUT**, **DELETE**.
-   **PUT**
+*   **PUT**
 - Must only match PUT requests for **specific_uri** (you will have to choose the URI).
 - Must respond with a 201 (Created) when a key-value pair is created.
 - Must respond to unexpected errors with a 500 (Internal Server Error).
-  **GET**
+*  **GET**
 - Must only match GET requests for **specific_uri** (you will have to choose the URI).
 - Must respond with a 404 (Not Found) when a requested key does not exist.
 - Must respond with the requested value and a status 200 (Ok) if the key exists.
 - Must respond to unexpected errors with a 500 (Internal Server Error).
-  **DELETE**
+*  **DELETE**
 - Must only match DELETE requests for **specific_uri** (you will have to choose the URI).
 - Must respond with a status 200 (Ok) indicating a successful deletion with additional information.
   In this case, the response body can contain the deleted resource or some details about the deletion.
@@ -55,29 +55,34 @@ Build a simple HTTP server/client for the key-value storage project.
 * [URL & URI](https://danielmiessler.com/study/difference-between-uri-url/)
 * [GoLang & JSON](https://gobyexample.com/json)
 
-### Sub task3 (Concurrency)
+### Sub task3 (Transaction Logger)
+If the key-value service was crashed/restarted or found itself in an inconsistent state, it should have the ability to **recover** the system.
+The requirement here is to use **go channels**.
+
+**Small tip**: the idea is to have a file, where all **PUT** and **DELETE** actions will be stored. Then if a key-value service needed to be recovered,
+it can use the file. 
+
+### Sub task4 (Concurrency)
 Make key-value storage server concurrent save. Go's standard library provides mutual exclusion with **sync.Mutex**.
 A general idea is when the key-value storage is being modified, the storage should be **Locked**.
 So that any other processes will wait until the current process is finished. If it needs to read data from the storage,
 it should be **RLocked**(Read Locked).
 
-### Sub task4 (Go templates)
+### Sub task5 (Go templates)
 The HTTP server should be allowed to return web pages with key-value storage key pairs. For that, each REST API handler
 must be able to return Web Pages. Two packages are operating with templates in Go — **text/template** and **html/template**.
 Both provide the same interface, however, the **html/template** package is used to generate HTML output safe against code injection.
-TODO:vishevch:does it mean we will have to use **gorrila/mux** or something?
++ Add a new REST API to return all data from key-value storage and use **html/template** package for pretty formatted output.
+# todo: go templates condition, loops find a task
 
-### Sub task5 (HTTPS server)
+### Sub task6 (HTTPS server)
 HTTP data between server and client is not encrypted, so it can be intercepted by third parties to gather data passed from the server to the client.
 This can be addressed by using a secure version called HTTPS. **The key-value storage server has to become HTTPS instead of HTTP.**
 Small tip: **net/http** library allows to achieve that.
 
-### Sub task6 (Logging)
+### Sub task7 (Logging)
 The key-value storage server should have the ability for troubleshooting some issues/bugs and for identifying infrastructure problems.
-This can be achieved using logging functionality, Go provides a library that helps easily integrate this to your application. The library name is **log**
-TODO:vishevch: probably use zapr instead of log
-
-### Sub task7 (Persisting Resource State)
+This can be achieved using logging functionality, Go provides a library that helps easily integrate this to your application. The library name is **log**.
 
 
 ### Sub task8 (Containerization)
