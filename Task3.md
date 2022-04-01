@@ -152,6 +152,10 @@ Small hint: **net/http** library allows to achieve that.
 The key-value storage server should have the ability for troubleshooting some issues/bugs and for identifying infrastructure problems.
 This can be achieved using logging functionality, Go provides a library that helps easily integrate this to your application. The library name is **log**.
 
+#### Something to read
+[What is logging and why it's needed](https://towardsdatascience.com/why-should-you-care-about-logging-442a195b80a1)
+[Logging Best Practices](https://www.dataset.com/blog/the-10-commandments-of-logging/)
+
 ### Sub-task 9 (Containerization)
 #### Pre requirements
 1. Install **Docker desktop**
