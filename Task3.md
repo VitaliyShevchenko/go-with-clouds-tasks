@@ -127,7 +127,7 @@ Info on Go concurrency:
 ### Sub-task 6 (Transaction Logger)
 
 If the key-value service was crashed/restarted or found itself in an inconsistent state, it should have the ability to **recover**
-the system. The requirement here is to use **go channels*.
+the system. The requirement here is to use **go channels**.
 
 **Hint**:
 
