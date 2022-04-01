@@ -65,6 +65,9 @@ Build a simple HTTP server/client for the key-value storage project.
 - Must respond with a 404 (Not found) if no resource exists at the given URI.
 
 **Note**: A good level of documentation and unit test coverage is required.
+**Hint**: Learn to separate interfaces and interface consumers from the interface implementations
+with [this article](https://medium.com/applike/golang-interfaces-809f2746a24f). This might be useful during implementation of HTTP
+handlers whcih depend on the Storage interface.
 
 #### Something to read
 
