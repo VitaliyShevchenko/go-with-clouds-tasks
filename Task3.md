@@ -81,7 +81,7 @@ The HTTP server should have a REST API, which will return all data from the key-
 The html page should show all key pairs as html table or divs with CSS styles.  
 If the key-value storage is empty, an appropriate message should be shown to a user.
 
-**Small tip**: two packages are operating with templates in Go — **text/template** and **html/template**. Both provide the same
+**Hint**: two packages are operating with templates in Go — **text/template** and **html/template**. Both provide the same
 interface, however, the **html/template** package is used to generate HTML output safe against code injection.
 
 Info on Go templates:
@@ -118,10 +118,15 @@ Info on Go concurrency:
 ### Sub-task 6 (Transaction Logger)
 
 If the key-value service was crashed/restarted or found itself in an inconsistent state, it should have the ability to **recover**
-the system. The requirement here is to use **go channels**.
+the system. The requirement here is to use **go channels*.
 
-**Small tip**: the idea is to have a file, where all **PUT** and **DELETE** actions will be stored. Then if a key-value service
-needed to be recovered, it can use the file.
+**Hint**:
+
+* log **PUT** and **DELETE** actions as entries in the file.
+* at the start of the server, if the file is present -> start a goroutine to load entries into the memory and send them to a
+  channel.
+* the channel is used by another function to receive entries and make API requests to the key-value storage to restore these
+  records into the storage.
 
 #### Some examples of output
 
