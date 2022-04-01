@@ -144,6 +144,10 @@ server to the client. This can be addressed by using a secure version called HTT
 HTTPS instead of HTTP.**
 Small hint: **net/http** library allows to achieve that.
 
+#### Something to read
+[What is HTTPs?](https://habr.com/ru/post/593507/)
+[Example of TLS + HTTPs implementation in GoLang](https://gist.github.com/denji/12b3a568f092ab951456)
+
 ### Sub-task 8 (Logging)
 The key-value storage server should have the ability for troubleshooting some issues/bugs and for identifying infrastructure problems.
 This can be achieved using logging functionality, Go provides a library that helps easily integrate this to your application. The library name is **log**.
