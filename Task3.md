@@ -28,7 +28,7 @@ Build a simple HTTP server/client for the key-value storage project.
 3. Write a table with a specification for REST API. (see example below)
 
    | Functionality     | Method | URI    | Status code |
-                        |-------------------|--------|--------|------------ |
+   |-------------------|--------|--------|------------ |
    | Create a user     | POST   | /users | 200         |
 
 4. Add the next handlers to the server: **GET ALL**, **GET**, **PUT**, **DELETE**.
@@ -84,6 +84,11 @@ If the key-value storage is empty, an appropriate message should be shown to a u
 **Hint**: two packages are operating with templates in Go — **text/template** and **html/template**. Both provide the same
 interface, however, the **html/template** package is used to generate HTML output safe against code injection.
 
+#### Some examples of output
+
+![empty key-value storage](examples/empty%20key-value.png)
+![not empty key-value storage](examples/not-empty-key-value.png)
+
 Info on Go templates:
 
 * [A quick overview of go templates](https://betterprogramming.pub/how-to-use-templates-in-golang-46194c677c7d):
@@ -128,17 +133,12 @@ the system. The requirement here is to use **go channels*.
 * the channel is used by another function to receive entries and make API requests to the key-value storage to restore these
   records into the storage.
 
-#### Some examples of output
-
-![empty key-value storage](examples/empty%20key-value.png)
-![not empty key-value storage](examples/not-empty-key-value.png)
-
 ### Sub-task 7 (HTTPS server)
 
 HTTP data between server and client is not encrypted, so it can be intercepted by third parties to gather data passed from the
 server to the client. This can be addressed by using a secure version called HTTPS. **The key-value storage server has to become
 HTTPS instead of HTTP.**
-Small tip: **net/http** library allows to achieve that.
+Small hint: **net/http** library allows to achieve that.
 
 ### Sub-task 8 (Logging)
 The key-value storage server should have the ability for troubleshooting some issues/bugs and for identifying infrastructure problems.
