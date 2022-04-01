@@ -181,6 +181,11 @@ In the scope of this task, the next Gradle commands have to be implemented:
 1. `dockerBuild` — runs `docker build` command
 2. `publish` — runs `docker push` command
 3. `tests` — runs `go tests` and `go lint` commands
+   
+**Hint**: it's better to use [gradle wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html).
+
+#### Something to read
+* [Gradle getting started](https://gradle.org/guides/#getting-started)
 
 ### Sub-task 11 (CI build)
 Continuous Integration (CI) is a way to increase code quality without putting an extra burden on the developers.
