@@ -30,9 +30,7 @@ different brainfuck programs.
 
 ### Advanced features
 
-* Add a new command where the chains of the same commands can be replaced by a single command that performs aggregated action,
-  e.g. “+++++” chain must be replaced by a single command that performs “increment by 5” operation
-  (you can come up with any other command).
+* Come up with a new command and implement it. The simplest example is to add `5` operator which adds 5 to the current cell.
 * Allow empty spaces and line breaks in the input for the brainfuck interpreter.
 
 ### Golang articles which are useful during implementation
