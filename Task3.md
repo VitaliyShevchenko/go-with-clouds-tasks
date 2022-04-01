@@ -145,24 +145,32 @@ HTTPS instead of HTTP.**
 Small hint: **net/http** library allows to achieve that.
 
 #### Something to read
-[What is HTTPs?](https://habr.com/ru/post/593507/)
-[Example of TLS + HTTPs implementation in GoLang](https://gist.github.com/denji/12b3a568f092ab951456)
+* [What is HTTPs?](https://habr.com/ru/post/593507/)
+* [Example of TLS + HTTPs implementation in GoLang](https://gist.github.com/denji/12b3a568f092ab951456)
 
 ### Sub-task 8 (Logging)
 The key-value storage server should have the ability for troubleshooting some issues/bugs and for identifying infrastructure problems.
 This can be achieved using logging functionality, Go provides a library that helps easily integrate this to your application. The library name is **log**.
 
 #### Something to read
-[What is logging and why it's needed](https://towardsdatascience.com/why-should-you-care-about-logging-442a195b80a1)
-[Logging Best Practices](https://www.dataset.com/blog/the-10-commandments-of-logging/)
+* [What is logging and why it's needed](https://towardsdatascience.com/why-should-you-care-about-logging-442a195b80a1)
+* [Logging Best Practices](https://www.dataset.com/blog/the-10-commandments-of-logging/)
 
 ### Sub-task 9 (Containerization)
 #### Pre requirements
 1. Install **Docker desktop**
 
 #### Description
-The key-value storage server should be containerized in a Docker container. The result of this task should be a docker image, which everyone can run locally
-and show the key-value storage works as expected.
+The key-value storage server should be containerized in a Docker container. The result of this task should be:
+1. `Dockerfile` — a text file that contains all commands, in order, needed to build a given image.
+2. pushed docker image into a private docker repository (which you have to create)
+3. everyone should be able to pull the image and run it locally
+   and show that the key-value storage works as expected.
+
+#### Something to read
+* [Docker getting started](https://medium.com/@kmdkhadeer/docker-get-started-9aa7ee662cea#:~:text=Docker%20is%20a%20set%20of,other%20through%20well%2Ddefined%20channels.)
+* [What's Docker repository and how to work with it](https://docs.docker.com/docker-hub/repos/#:~:text=To%20push%20an%20image%20to,docs%2Fbase%3Atesting%20)
+* [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
 ### Sub-task 10 (Build tool)
 At this point, there are too many tasks that we have to run manually every time we want to do some action,
