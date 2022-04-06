@@ -142,11 +142,14 @@ the system. The requirement here is to use **go channels**.
 HTTP data between server and client is not encrypted, so it can be intercepted by third parties to gather data passed from the
 server to the client. This can be addressed by using a secure version called HTTPS. **The key-value storage server has to become
 HTTPS instead of HTTP.**
+
 Small hint: **net/http** library allows to achieve that.
 
 #### Something to read
 * [What is HTTPs?](https://habr.com/ru/post/593507/)
 * [Example of TLS + HTTPs implementation in GoLang](https://gist.github.com/denji/12b3a568f092ab951456)
+* [Certificates](https://smallstep.com/blog/everything-pki/#:~:text=A%20certificate%20is%20a%20data,certificate%20is%20called%20the%20subject.)
+
 
 ### Sub-task 8 (Logging)
 The key-value storage server should have the ability for troubleshooting some issues/bugs and for identifying infrastructure problems.
