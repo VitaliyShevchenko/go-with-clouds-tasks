@@ -152,25 +152,63 @@ Small hint: **net/http** library allows to achieve that.
 
 
 ### Sub-task 8 (Logging)
-The key-value storage server should have the ability for troubleshooting some issues/bugs and for identifying infrastructure problems.
-This can be achieved using logging functionality, Go provides a library that helps easily integrate this to your application. The library name is **log**.
+The key-value storage server should have the ability for troubleshooting some issues/bugs and for identifying infrastructure
+problems. This can be achieved using logging functionality, Go provides a library that helps easily integrate this to your
+application. The library name is **log**.
 
 #### Something to read
+
 * [What is logging and why it's needed](https://towardsdatascience.com/why-should-you-care-about-logging-442a195b80a1)
 * [Logging Best Practices](https://www.dataset.com/blog/the-10-commandments-of-logging/)
 
 ### Sub-task 9 (Containerization)
+
 #### Pre requirements
+
 1. Install **Docker desktop**
 
-#### Description
+### Sub-task 9.1 (Get familiar with Linux)
+
+Docker is built on Linux system, most programs in cloud run on Linux, so it's vitally important to learn it. Here is a
+full-fledged tutorial: [unix-quick-guide](https://www.tutorialspoint.com/unix/unix-quick-guide.htm). Better to get familiar with
+all topics in the tutorial but the most important ones are the following:
+
+* "Unix - File Management" till "Unix - File Permission / Access Modes"
+* "Unix - Environment"
+* "Unix - Pipes and Filters"
+* The vi Editor Tutorial
+* "Unix - What is Shells?" till "Unix - Shell Manpage Help"
+* "Unix - File System Basics"
+
+The task is to write a shell script `kv_upload_items.sh` which:
+
+1. Accepts source text file containing JSON key-value pairs per line
+2. Reads the file and uses `curl` command to store these records on the running key-value server
+3. Uses `curl` command to get all records from the server
+4. Checks if all the records from the source file are in the GET-ALL response
+5. Outputs "All records stored" if it was successful and "Failed to store records" otherwise
+
+To develop it use ubuntu container with mounted project repo directory, commit it to the repo and put the instruction how to run
+the script in the Readme.md file:
+
+```sh
+PROJECT_DIR=/path/to/project_dir
+docker run -it --mount src="$PROJECT_DIR",target=/project_dir,type=bind ubuntu
+# inside the container
+cd /project_dir
+./kv_upload_items.sh /path/to/file_with_json_key_value_pairs
+```
+
+### Sub-task 9.2 (Package key-value storage as a docker image)
+
 The key-value storage server should be containerized in a Docker container. The result of this task should be:
+
 1. `Dockerfile` — a text file that contains all commands, in order, needed to build a given image.
 2. pushed docker image into a private docker repository (which you have to create)
-3. everyone should be able to pull the image and run it locally
-   and show that the key-value storage works as expected.
+3. everyone should be able to pull the image and run it locally and show that the key-value storage works as expected.
 
 #### Something to read
+
 * [Docker getting started](https://medium.com/@kmdkhadeer/docker-get-started-9aa7ee662cea#:~:text=Docker%20is%20a%20set%20of,other%20through%20well%2Ddefined%20channels.)
 * [What's Docker repository and how to work with it](https://docs.docker.com/docker-hub/repos/#:~:text=To%20push%20an%20image%20to,docs%2Fbase%3Atesting%20)
 * [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
