@@ -204,7 +204,7 @@ cd /project_dir
 The key-value storage server should be containerized in a Docker container. The result of this task should be:
 
 1. `Dockerfile` — a text file that contains all commands, in order, needed to build a given image.
-2. pushed docker image into a private docker repository (which you have to create)
+2. pushed docker image into a public docker repository (which you have to create)
 3. everyone should be able to pull the image and run it locally and show that the key-value storage works as expected.
 
 #### Something to read
