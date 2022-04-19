@@ -211,6 +211,8 @@ The key-value storage server should be containerized in a Docker container. The 
 
 * [Docker getting started](https://medium.com/@kmdkhadeer/docker-get-started-9aa7ee662cea#:~:text=Docker%20is%20a%20set%20of,other%20through%20well%2Ddefined%20channels.)
 * [What's Docker repository and how to work with it](https://docs.docker.com/docker-hub/repos/#:~:text=To%20push%20an%20image%20to,docs%2Fbase%3Atesting%20)
+* [Container terminology in details](https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction/)
+* [Dockerfile tutorial](https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/)
 * [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
 ### Sub-task 9 (Build tool)
