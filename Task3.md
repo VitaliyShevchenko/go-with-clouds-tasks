@@ -79,7 +79,7 @@ handlers whcih depend on the Storage interface.
 * [URL & URI](https://danielmiessler.com/study/difference-between-uri-url/)
 * [GoLang & JSON](https://gobyexample.com/json)
 
-### Sub-task 4 (Go templates)
+### Sub-task 3 (Go templates)
 
 The HTTP server should have a REST API, which will return all data from the key-value storage as HTML page.  
 The html page should show all key pairs as html table or divs with CSS styles.  
@@ -99,7 +99,7 @@ Info on Go templates:
   read and execute code snippets in the article, play with them to learn the API.
 * Read [Full spec of go template package](https://pkg.go.dev/text/template).
 
-### Sub-task 5 (Concurrency)
+### Sub-task 4 (Concurrency)
 
 Add client package which is capable of connecting to the server and initiating requests.
 
@@ -124,7 +124,7 @@ Info on Go concurrency:
 * [Why go concurrency is great?](https://www.slideshare.net/jsimnz/concurrency-with-go) - an overview
 * [Concurrency patterns](https://talks.golang.org/2012/concurrency.slide#1) - read carefully, execute code snippets
 
-### Sub-task 6 (Transaction Logger)
+### Sub-task 5 (Transaction Logger)
 
 If the key-value service was crashed/restarted or found itself in an inconsistent state, it should have the ability to **recover**
 the system. The requirement here is to use **go channels**.
@@ -137,7 +137,7 @@ the system. The requirement here is to use **go channels**.
 * the channel is used by another function to receive entries and make API requests to the key-value storage to restore these
   records into the storage.
 
-### Sub-task 7 (HTTPS server)
+### Sub-task 6 (HTTPS server)
 
 HTTP data between server and client is not encrypted, so it can be intercepted by third parties to gather data passed from the
 server to the client. This can be addressed by using a secure version called HTTPS. **The key-value storage server has to become
@@ -151,7 +151,7 @@ Small hint: **net/http** library allows to achieve that.
 * [Certificates](https://smallstep.com/blog/everything-pki/#:~:text=A%20certificate%20is%20a%20data,certificate%20is%20called%20the%20subject.)
 
 
-### Sub-task 8 (Logging)
+### Sub-task 7 (Logging)
 The key-value storage server should have the ability for troubleshooting some issues/bugs and for identifying infrastructure
 problems. This can be achieved using logging functionality, Go provides a library that helps easily integrate this to your
 application. The library name is **log**.
@@ -161,13 +161,13 @@ application. The library name is **log**.
 * [What is logging and why it's needed](https://towardsdatascience.com/why-should-you-care-about-logging-442a195b80a1)
 * [Logging Best Practices](https://www.dataset.com/blog/the-10-commandments-of-logging/)
 
-### Sub-task 9 (Containerization)
+### Sub-task 8 (Containerization)
 
 #### Pre requirements
 
 1. Install **Docker desktop**
 
-### Sub-task 9.1 (Get familiar with Linux)
+### Sub-task 8.1 (Get familiar with Linux)
 
 Docker is built on Linux system, most programs in cloud run on Linux, so it's vitally important to learn it. Here is a
 full-fledged tutorial: [unix-quick-guide](https://www.tutorialspoint.com/unix/unix-quick-guide.htm). Better to get familiar with
@@ -199,7 +199,7 @@ cd /project_dir
 ./kv_upload_items.sh /path/to/file_with_json_key_value_pairs
 ```
 
-### Sub-task 9.2 (Package key-value storage as a docker image)
+### Sub-task 8.2 (Package key-value storage as a docker image)
 
 The key-value storage server should be containerized in a Docker container. The result of this task should be:
 
@@ -213,7 +213,7 @@ The key-value storage server should be containerized in a Docker container. The 
 * [What's Docker repository and how to work with it](https://docs.docker.com/docker-hub/repos/#:~:text=To%20push%20an%20image%20to,docs%2Fbase%3Atesting%20)
 * [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
-### Sub-task 10 (Build tool)
+### Sub-task 9 (Build tool)
 At this point, there are too many tasks that we have to run manually every time we want to do some action,
 such as `go build`, `go test`, `docker run`, `docker build`, etc. A build tool (Gradle) helps to automate tasks that
 we would otherwise have to manually perform or "manually automate".
@@ -228,14 +228,14 @@ In the scope of this task, the next Gradle commands have to be implemented:
 #### Something to read
 * [Gradle getting started](https://gradle.org/guides/#getting-started)
 
-### Sub-task 11 (CI build)
+### Sub-task 10 (CI build)
 Continuous Integration (CI) is a way to increase code quality without putting an extra burden on the developers.
 Tests and checks of your code are handled on a server and automatically reported back to you.
 The project has to have the ability to support CI. In the scope of this task, you will have to do next:
 1. Implement a project’s entire pipeline in a **Jenkinsfile**. It should allow running **unit tests** and send an error with a description of what's failed.
 2. Configure a project in GitHub to run CI for every PR you created.
 
-### Sub-task 12 (Kubernetes getting started)
+### Sub-task 11 (Kubernetes getting started)
 #### Pre requirements
 1. Install **kubectl**, **Lens**
 
@@ -249,7 +249,7 @@ In addition to that Gradle tasks should be added:
 1. `deploy` — deploys the key-value storage app on the Kubernetes cluster.
 2. `undeploy` — removes the key-value storage app from the Kubernetes cluster.
 
-### Sub-task 13 (kubebuilder)
+### Sub-task 12 (kubebuilder)
 Create a custom resource for the key-value application using kubebuilder. Implement a controller for it.
 The Kubernetes Custom Resource Definition  has the following schema:
 ```yaml
@@ -275,13 +275,13 @@ status:
 ```
 TODO:vishevch:fill CRD definition
 
-### Sub-task 14 (webhooks)
+### Sub-task 13 (webhooks)
 The CRD should be validated properly, to achieve that custom validating_webhook for the CRD should be implemented.
 
 #### Validation rules:
 TODO:vishevch:add validation rules
 
-### Sub-task 15 (package managers)
+### Sub-task 14 (package managers)
 The application should be packaged to Helm (one of the available package managers) chart. This will helm to define, install,
 and upgrade even the most complex Kubernetes application.
 In addition to that the following Gradle tasks should be added:
@@ -289,7 +289,7 @@ In addition to that the following Gradle tasks should be added:
 3. `installChart` — installs chart on Kubernetes cluster
 4. `uninstallChart` — uninstalls chart from Kubernetes cluster
 
-### Sub-task 16 (improve CI build)
+### Sub-task 15 (improve CI build)
 At this point, the CI can be improved and can be smarter. It should be able to do next:
 1. Run unit tests (functionality from the Sub task10).
 2. Create docker image for the key-value storage app.
