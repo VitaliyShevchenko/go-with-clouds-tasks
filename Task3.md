@@ -215,19 +215,46 @@ The key-value storage server should be containerized in a Docker container. The 
 * [Dockerfile tutorial](https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/)
 * [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
-### Sub-task 9 (Build tool)
-At this point, there are too many tasks that we have to run manually every time we want to do some action,
-such as `go build`, `go test`, `docker run`, `docker build`, etc. A build tool (Gradle) helps to automate tasks that
-we would otherwise have to manually perform or "manually automate".
+### Sub-task 9 (Build tools)
 
-In the scope of this task, the next Gradle commands have to be implemented:
+At this point, there are too many tasks that we have to run manually every time we want to do some action, such as `go build`
+, `go test`, `docker run`, `docker build`, etc. A build tool (Gradle) helps to automate tasks that we would otherwise have to
+manually perform or "manually automate".  
+Also, the problem may arise for collaborators on the project that develop using different platforms (Linux, Windows, etc) and
+using different tools and their versions to run the project. To solve it you'll use Vagrant.
+
+### Sub-task 9.1 (Vagrant)
+
+Install [vagrant](https://www.vagrantup.com/) and pass [Getting Started](https://learn.hashicorp.com/vagrant) guide. This tool
+allows configuring and sharing engineering workspace and solves issues like “it doesn't work on my machine”.
+
+Add `Vagrantfile` to the project and configure it. You can use VirtualBox or docker provider for your vagrant instance. All
+commands that you’ll need to add for `gradle` need to be run in `vagrant`, and `Vagrantfile` should have provisioning instructions
+for the environment and tools you’re using.
+
+Install tools needed for key-value project:
+
+- `golang`
+- `docker`
+- `gradle`
+
+As a result you should be able to do `vagrant destroy`, `vagrant up`, `vagrant ssh` and then verify you can execute `go version`
+, `docker version`, `gradle -v` on the vagrant machine.
+
+**Notes**: [Lecture notes](https://skilshot.notion.site/Vagrant-cb1582365885471186fd9dcff9addf0c)
+
+### Sub-task 9.2 (Gradle)
+
+The next Gradle commands have to be implemented:
+
 1. `dockerBuild` — runs `docker build` command
 2. `publish` — runs `docker push` command
 3. `tests` — runs `go tests` and `go lint` commands
-   
+
 **Hint**: it's better to use [gradle wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html).
 
 #### Something to read
+
 * [Gradle getting started](https://gradle.org/guides/#getting-started)
 
 ### Sub-task 10 (CI build)
