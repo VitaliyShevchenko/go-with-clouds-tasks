@@ -245,17 +245,34 @@ As a result you should be able to do `vagrant destroy`, `vagrant up`, `vagrant s
 
 ### Sub-task 9.2 (Gradle)
 
-The next Gradle commands have to be implemented:
+Gradle is a build tool. It allows automating tasks such as building, testing and publishing a project.
 
-1. `dockerBuild` — runs `docker build` command
-2. `publish` — runs `docker push` command
-3. `tests` — runs `go tests` and `go lint` commands
+[Install gradle](https://docs.gradle.org/current/userguide/installation.html) (you did it in task 9.1) and
+execute `gradle wrapper` to generate a [wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html), specify gradle
+version and commit it to the repo.  
+Follow [official docs](https://docs.gradle.org/current/userguide/userguide.html) to get familiar with it.
 
-**Hint**: it's better to use [gradle wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html).
+Add the following gradle tasks for the project:
 
-#### Something to read
+- cleanCode (meant to run before committing code)
+    - Format code with `gofmt`
+    - Optimize dependencies (`go mod tidy`)
+    - Run `[staticcheck](https://staticcheck.io/)` tool
+- build
+    - Build key-value server go binary and puts it into `buildDir`
+- test
+    - Run go tests
+- testingDone
+    - Run go tests with coverage report and fail if doesn’t match the low boundary of 80 percent
+- sanityCheck (we can use this task on CI to ensure PR changes don’t break the program)
+    - Run key-value server and execute `kv_upload_items.sh` script.
+      In future this task will be used to fail CI if upload is not successful.
+- dockerBuild
+    - Build key-value docker image using Dockerfile
+- publish
+    - Push the key-value docker image to dockerhub
 
-* [Gradle getting started](https://gradle.org/guides/#getting-started)
+**Notes**: [Lecture notes](https://skilshot.notion.site/Gradle-82d5e7822a6a451e83e7631554e9c633)
 
 ### Sub-task 10 (CI build)
 Continuous Integration (CI) is a way to increase code quality without putting an extra burden on the developers.
