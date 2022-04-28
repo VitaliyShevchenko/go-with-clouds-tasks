@@ -257,7 +257,7 @@ Add the following gradle tasks for the project:
 - cleanCode (meant to run before committing code)
     - Format code with `gofmt`
     - Optimize dependencies (`go mod tidy`)
-    - Run `[staticcheck](https://staticcheck.io/)` tool
+    - Run [staticcheck](https://staticcheck.io/) tool
 - build
     - Build key-value server go binary and puts it into `buildDir`
 - test
