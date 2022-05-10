@@ -281,8 +281,7 @@ The project has to have the ability to support CI. In the scope of this task, yo
 1. Implement a project’s entire pipeline in a **Jenkinsfile**. It should allow running **unit tests** and send an error with a description of what's failed.
 2. Set up a project on GitHub to run CI for every PR or commit on the master branch.
 
-TODO
-**Notes**: [Lecture notes](Add link)
+**Notes**: [Lecture notes](https://docs.google.com/presentation/d/1l1Z8FvSELESts3SFfu-Sb2FMq--HvB_4/edit?usp=sharing&ouid=107330001931294770933&rtpof=true&sd=true)
 
 ### Sub-task 11 (Kubernetes getting started)
 #### Pre requirements
