@@ -279,7 +279,10 @@ Continuous Integration (CI) is a way to increase code quality without putting an
 Tests and checks of your code are handled on a server and automatically reported back to you.
 The project has to have the ability to support CI. In the scope of this task, you will have to do next:
 1. Implement a project’s entire pipeline in a **Jenkinsfile**. It should allow running **unit tests** and send an error with a description of what's failed.
-2. Configure a project in GitHub to run CI for every PR you created.
+2. Set up a project on GitHub to run CI for every PR or commit on the master branch.
+
+TODO
+**Notes**: [Lecture notes](Add link)
 
 ### Sub-task 11 (Kubernetes getting started)
 #### Pre requirements
