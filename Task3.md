@@ -313,30 +313,32 @@ To achieve that, you will have to do next:
 * [Security](https://kubernetes.io/docs/concepts/security/)
 
 ### Sub-task 12 (kubebuilder)
-Create a custom resource for the key-value application using kubebuilder. Implement a controller for it.
+We should have an ability to store key-value pairs using Kubernetes resources, called Custom Resource. 
+In the scope of this task, you will have to create Custom Resource Definition (CRD) for the key-value application
+using **kubebuilder** tool and implement a controller for it.
 The Kubernetes Custom Resource Definition  has the following schema:
+
 ```yaml
 apiVersion: teamdev.com/v1
 kind: KIND
-
 spec:
-  someField: "someValue"
-  someField2: "someValue2"
-
+  data:
+    <key1>: "someValue"
+    <key2>: "someValue2"
 status:
   conditions:
-  - type: "TYPE"
-    
+  - type: "Added"
     # True or False
-    status: True
-    
+    # True, if the items were added to the key-value storage
+    # False, if the items were not added to the key-value storage
+    status: True/False
+    # If status is False, the reason should be populated
     reason: REASON
-    
+    # If status is False, the message should be populated
     message: MESSAGE
-    
+    # A time when an object moves in this state
     lastUpdateTime: ""
 ```
-TODO:vishevch:fill CRD definition
 
 ### Sub-task 13 (webhooks)
 The CRD should be validated properly, to achieve that custom validating_webhook for the CRD should be implemented.
