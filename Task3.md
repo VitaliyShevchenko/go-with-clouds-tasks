@@ -283,7 +283,7 @@ The project has to have the ability to support CI. In the scope of this task, yo
 
 **Notes**: [Lecture notes](https://docs.google.com/presentation/d/1l1Z8FvSELESts3SFfu-Sb2FMq--HvB_4/edit?usp=sharing&ouid=107330001931294770933&rtpof=true&sd=true)
 
-### Sub-task 11 (Kubernetes getting started)
+### Sub-task 11 (Kubernetes)
 #### Pre requirements
 1. Install **kubectl**, **Lens**
 
@@ -296,6 +296,9 @@ Deploy key-value storage to Kubernetes. Needs to create a new folder in the proj
 In addition to that Gradle tasks should be added:
 1. `deploy` — deploys the key-value storage app on the Kubernetes cluster.
 2. `undeploy` — removes the key-value storage app from the Kubernetes cluster.
+
+#### Something to watch
+* [Kubernetes Full Course in 7 Hours](https://www.youtube.com/watch?v=0j-iIW3_sbg&list=WL&index=15)
 
 ### Sub-task 12 (kubebuilder)
 Create a custom resource for the key-value application using kubebuilder. Implement a controller for it.
