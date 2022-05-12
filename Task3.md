@@ -287,19 +287,21 @@ The project has to have the ability to support CI. In the scope of this task, yo
 #### Pre requirements
 1. Install **kubectl**, **Lens**
 
-#### Exercises for getting familiar with Kubernetes world
-1. Exercise creating clusters in **Docker desktop**
-2. Exercise deploying **hello-world** image in Kubernetes
-
 #### Description of the task
-Deploy key-value storage to Kubernetes. Needs to create a new folder in the project called `templates` and create a `Deployment` resource for the key-value storage app.
-In addition to that Gradle tasks should be added:
-1. `deploy` — deploys the key-value storage app on the Kubernetes cluster.
-2. `undeploy` — removes the key-value storage app from the Kubernetes cluster.
+A kubernetes cluster in docker should be created. The key-value storage should have ability to be deployed/undeployed on/from this cluster. 
+To achieve that, you will have to do next: 
+1. Create `templates` folder in the project. (most of the time all k8s related files are located here)
+2. Create a YAML file with `Deployment` manifest, which will deploy key-value storage on the cluster. 
+3. Add `deploy` gradle task — deploys the key-value storage app on the Kubernetes cluster. (Hint: `kubectl apply -f path_to_the_deployment_file`)
+4. Add `undeploy` gradle task  — removes the key-value storage app from the Kubernetes cluster. (Hint: `kubectl delete -f path_to_the_deployment_file`)
 
-#### Something to watch
+#### Something to read&watch
 * [Kubernetes Full Course in 7 Hours](https://www.youtube.com/watch?v=0j-iIW3_sbg&list=WL&index=15)
 * [Kubernetes overview](https://kubernetes.io/docs/concepts/overview/)
+* [Workloads](https://kubernetes.io/docs/concepts/workloads/)
+* [Services, Load Balancing, and Networking](https://kubernetes.io/docs/concepts/services-networking/)
+* [Configuration](https://kubernetes.io/docs/concepts/configuration/)
+* [Security](https://kubernetes.io/docs/concepts/security/)
 
 ### Sub-task 12 (kubebuilder)
 Create a custom resource for the key-value application using kubebuilder. Implement a controller for it.
