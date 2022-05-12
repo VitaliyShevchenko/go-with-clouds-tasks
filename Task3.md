@@ -299,6 +299,7 @@ In addition to that Gradle tasks should be added:
 
 #### Something to watch
 * [Kubernetes Full Course in 7 Hours](https://www.youtube.com/watch?v=0j-iIW3_sbg&list=WL&index=15)
+* [Kubernetes overview](https://kubernetes.io/docs/concepts/overview/)
 
 ### Sub-task 12 (kubebuilder)
 Create a custom resource for the key-value application using kubebuilder. Implement a controller for it.
