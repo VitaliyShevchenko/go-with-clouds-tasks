@@ -31,6 +31,8 @@ Simulate first seven labs from here: https://www.packettracernetwork.com/labs/pa
 The result of this task should be a `.pka` file, which you will have to upload to a Google Drive and share access with
 Vitalii Shevchenko and Nikita Matrosov TeamDev accounts.
 
+**Notes**: [Lecture notes](https://docs.google.com/presentation/d/1orYpIWsIvfXYXSGeDUoiIwnd_WJCTJqJ/edit?usp=sharing&ouid=104154946265606394823&rtpof=true&sd=true)
+
 ## Must read books and topics 
 * "Network Programming with Go: Code Secure and Reliable Network Services from Scratch" — a book to deep dive in Networking and Go
 * [OSI model](https://levelup.gitconnected.com/functions-of-networking-system-osi-model-e596705f0f6c)

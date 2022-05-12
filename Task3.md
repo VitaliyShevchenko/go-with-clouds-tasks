@@ -12,6 +12,7 @@ Build a simple, non-distributed key-value storage that can support the next thin
 
 **Note**: A good level of documentation and unit test coverage is required.
 
+[Lecture Notes](https://docs.google.com/presentation/d/1AC5O6HXgu7M1-NNktqrrjdgWbSM2KmZB/edit?usp=sharing&ouid=104154946265606394823&rtpof=true&sd=true)
 #### Something to read
 
 * [Cloud Native](https://cloudnative101.dev/concepts/cloud-native/)
@@ -68,7 +69,9 @@ Build a simple HTTP server/client for the key-value storage project.
 
 **Hint**: Learn to separate interfaces and interface consumers from the interface implementations
 with [this article](https://medium.com/applike/golang-interfaces-809f2746a24f). This might be useful during implementation of HTTP
-handlers whcih depend on the Storage interface.
+handlers which depend on the Storage interface.
+
+**Notes**: [Lecture Notes](https://docs.google.com/presentation/d/1CxWvqUCgxkY0ivp9VCGhV80-0sfnbSSE/edit?usp=sharing&ouid=104154946265606394823&rtpof=true&sd=true)
 
 #### Something to read
 
@@ -145,6 +148,8 @@ HTTPS instead of HTTP.**
 
 Small hint: **net/http** library allows to achieve that.
 
+**Notes**: [Lecture Notes](https://docs.google.com/presentation/d/1px4YUry67PEDBm-Sta-5T_iaBpdvWkmX/edit?usp=sharing&ouid=104154946265606394823&rtpof=true&sd=true)
+
 #### Something to read
 * [What is HTTPs?](https://habr.com/ru/post/593507/)
 * [Example of TLS + HTTPs implementation in GoLang](https://gist.github.com/denji/12b3a568f092ab951456)
@@ -206,6 +211,8 @@ The key-value storage server should be containerized in a Docker container. The 
 1. `Dockerfile` — a text file that contains all commands, in order, needed to build a given image.
 2. pushed docker image into a public docker repository (which you have to create)
 3. everyone should be able to pull the image and run it locally and show that the key-value storage works as expected.
+
+**Notes**: [Lecture Notes](https://docs.google.com/presentation/d/19oJTwt9juglbeAWR07T6CNp1NBUeGMRT/edit?usp=sharing&ouid=104154946265606394823&rtpof=true&sd=true)
 
 #### Something to read
 
@@ -294,6 +301,8 @@ To achieve that, you will have to do next:
 2. Create a YAML file with `Deployment` manifest, which will deploy key-value storage on the cluster. 
 3. Add `deploy` gradle task — deploys the key-value storage app on the Kubernetes cluster. (Hint: `kubectl apply -f path_to_the_deployment_file`)
 4. Add `undeploy` gradle task  — removes the key-value storage app from the Kubernetes cluster. (Hint: `kubectl delete -f path_to_the_deployment_file`)
+
+**Notes**: [Lecture Notes](https://docs.google.com/presentation/d/16YneymJE0dBMrz7PXXPIXXrlCC8DZRvC/edit?usp=sharing&ouid=104154946265606394823&rtpof=true&sd=true)
 
 #### Something to read&watch
 * [Kubernetes Full Course in 7 Hours](https://www.youtube.com/watch?v=0j-iIW3_sbg&list=WL&index=15)
