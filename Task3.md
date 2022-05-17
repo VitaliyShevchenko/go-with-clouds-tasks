@@ -294,7 +294,7 @@ The project has to have the ability to support CI. In the scope of this task, yo
 #### Pre requirements
 1. Install **kubectl**, **Lens**
 
-#### Description of the task
+#### Description of the task 11.1
 A kubernetes cluster in docker should be created. The key-value storage should have ability to be deployed/undeployed on/from this cluster. 
 To achieve that, you will have to do next: 
 1. Create `templates` folder in the project. (most of the time all k8s related files are located here)
@@ -302,7 +302,13 @@ To achieve that, you will have to do next:
 3. Add `deploy` gradle task — deploys the key-value storage app on the Kubernetes cluster. (Hint: `kubectl apply -f path_to_the_deployment_file`)
 4. Add `undeploy` gradle task  — removes the key-value storage app from the Kubernetes cluster. (Hint: `kubectl delete -f path_to_the_deployment_file`)
 
-**Notes**: [Lecture Notes](https://docs.google.com/presentation/d/16YneymJE0dBMrz7PXXPIXXrlCC8DZRvC/edit?usp=sharing&ouid=104154946265606394823&rtpof=true&sd=true)
+#### Description of the task 11.2
+The key-value replicas must be scaled up in case if there are more requests and load on the server growing. If the load is low,
+the key-value replicas must be downscaled. Kubernetes has a resource (HPA), which aims to automatically scale the workload to match demand.
+Need to create a new file (`hpa.yaml`) should be created in the `templates` folder and declare HPA manifest in this file. In addition to that,
+you have to show that HPA works correctly if the load is growing (using a benchmark test).
+
+**Notes**: [Lecture Notes](https://docs.google.com/presentation/d/1sYVamnWdMkq_B8Sbw-Ebp672CxkeytID/edit?usp=sharing&ouid=104154946265606394823&rtpof=true&sd=true)
 
 #### Something to read&watch
 * [Kubernetes Full Course in 7 Hours](https://www.youtube.com/watch?v=0j-iIW3_sbg&list=WL&index=15)
@@ -311,6 +317,7 @@ To achieve that, you will have to do next:
 * [Services, Load Balancing, and Networking](https://kubernetes.io/docs/concepts/services-networking/)
 * [Configuration](https://kubernetes.io/docs/concepts/configuration/)
 * [Security](https://kubernetes.io/docs/concepts/security/)
+* [Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
 
 ### Sub-task 12 (kubebuilder)
 We should have an ability to store key-value pairs using Kubernetes resources, called Custom Resource. 
