@@ -319,20 +319,28 @@ you have to show that HPA works correctly if the load is growing (using a benchm
 * [Security](https://kubernetes.io/docs/concepts/security/)
 * [Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
 
-### Sub-task 12 (kubebuilder)
-We should have an ability to store key-value pairs using Kubernetes resources, called Custom Resource. 
-In the scope of this task, you will have to create Custom Resource Definition (CRD) for the key-value application
-using **kubebuilder** tool and implement a controller for it.
-The Kubernetes Custom Resource Definition  has the following schema:
+### Sub-task 12 (K8s Operator using Kubebuilder)
+We now build a k8s extension using Operator concept 
+where we use Custom Resource Definition and controller-manager pod 
+which allow working with key-value storage like with a native k8s resource.
+[Kubebuilder](https://book.kubebuilder.io/introduction.html) is a k8s operator framework which makes it easy. 
+
+**Notes**: [Lecture Notes](https://docs.google.com/presentation/d/1NyHlQP04iOwQi2RxatyQrt8YKUy9Q0P1QFyQ94y56Rg/edit?usp=sharing)
+
+#### Sub-task 12.1 (CRD)
+The task is to bootstrap kubebuilder project and define a CRD 
+which allows to populate key-value storage.
+The Kubernetes Custom Resource need to have the following schema:
 
 ```yaml
 apiVersion: teamdev.com/v1
-kind: KIND
+kind: KeyValueData
 spec:
   data:
     <key1>: "someValue"
     <key2>: "someValue2"
 status:
+  # you can come up with your own status fields, below is just an example
   conditions:
   - type: "Added"
     # True or False
@@ -347,13 +355,12 @@ status:
     lastUpdateTime: ""
 ```
 
-### Sub-task 13 (webhooks)
+#### Sub-task 12.2 (Webhooks)
 The CRD should be validated properly, to achieve that custom validating_webhook for the CRD should be implemented.
+Validation rules:
+* it should deny adding `KeyValueData` resource with a key that is already defined in another resource
 
-#### Validation rules:
-TODO:vishevch:add validation rules
-
-### Sub-task 14 (package managers)
+### Sub-task 13 (package managers)
 The application should be packaged to Helm (one of the available package managers) chart. This will helm to define, install,
 and upgrade even the most complex Kubernetes application.
 In addition to that the following Gradle tasks should be added:
@@ -361,7 +368,7 @@ In addition to that the following Gradle tasks should be added:
 3. `installChart` — installs chart on Kubernetes cluster
 4. `uninstallChart` — uninstalls chart from Kubernetes cluster
 
-### Sub-task 15 (improve CI build)
+### Sub-task 14 (improve CI build)
 At this point, the CI can be improved and can be smarter. It should be able to do next:
 1. Run unit tests (functionality from the Sub task10).
 2. Create docker image for the key-value storage app.
