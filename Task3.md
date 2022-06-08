@@ -329,7 +329,13 @@ which allow working with key-value storage like with a native k8s resource.
 
 #### Sub-task 12.1 (CRD)
 The task is to bootstrap kubebuilder project and define a CRD 
-which allows to populate key-value storage.
+which allows to populate key-value storage. 
+
+You need to handle all CRUD actions on your Custom Resource: 
+* if user creates CR it should put that data in the storage;
+* if updates - it should remove/add/update corresponding key-value pairs;
+* if deletes - it should remove those keys from the storage.
+
 The Kubernetes Custom Resource need to have the following schema:
 
 ```yaml
@@ -357,8 +363,12 @@ status:
 
 #### Sub-task 12.2 (Webhooks)
 The CRD should be validated properly, to achieve that custom validating_webhook for the CRD should be implemented.
+
 Validation rules:
+* it should not allow duplicated keys to be defined in one `KeyValueData` resource
 * it should deny adding `KeyValueData` resource with a key that is already defined in another resource
+
+Make sure to have these validations for both create and update actions.
 
 ### Sub-task 13 (package managers)
 The application should be packaged to Helm (one of the available package managers) chart. This will helm to define, install,
