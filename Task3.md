@@ -365,7 +365,6 @@ status:
 The CRD should be validated properly, to achieve that custom validating_webhook for the CRD should be implemented.
 
 Validation rules:
-* it should not allow duplicated keys to be defined in one `KeyValueData` resource
 * it should deny adding `KeyValueData` resource with a key that is already defined in another resource
 
 Make sure to have these validations for both create and update actions.
