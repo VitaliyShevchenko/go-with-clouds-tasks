@@ -370,14 +370,23 @@ Validation rules:
 Make sure to have these validations for both create and update actions.
 
 ### Sub-task 13 (package managers)
-The application should be packaged to Helm (one of the available package managers) chart. This will helm to define, install,
+The application should be packaged to Helm (one of the available package managers) chart. This will allow defining, installing,
 and upgrade even the most complex Kubernetes application.
+The helm chart should contain a parent chart and two sub-charts (**operator** and **storage**). All k8s manifests should be
+located under appropriate charts and under `templates` resources.
+
 In addition to that the following Gradle tasks should be added:
 1. `createChart` — creates a Helm chart with all needed resources for the key-value storage
-3. `installChart` — installs chart on Kubernetes cluster
-4. `uninstallChart` — uninstalls chart from Kubernetes cluster
+2. `installChart` — installs chart on Kubernetes cluster
+3. `uninstallChart` — uninstalls chart from Kubernetes cluster
 
-### Sub-task 14 (improve CI build)
+#### Something to read
+* [Helm official documentation](https://helm.sh/)
+* [What is, and what use cases have the dot "." in helm charts?](https://stackoverflow.com/questions/62472224/what-is-and-what-use-cases-have-the-dot-in-helm-charts)
+
+**Notes**: [Lecture Notes](https://docs.google.com/presentation/d/1LcitbyO4RIIkea6bkdH5R6eOH6UjM11k/edit?usp=sharing&ouid=104154946265606394823&rtpof=true&sd=true)
+
+### Sub-task 14 (improve CI build) — Optional
 At this point, the CI can be improved and can be smarter. It should be able to do next:
 1. Run unit tests (functionality from the Sub task10).
 2. Create docker image for the key-value storage app.
