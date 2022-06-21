@@ -386,7 +386,21 @@ In addition to that the following Gradle tasks should be added:
 
 **Notes**: [Lecture Notes](https://docs.google.com/presentation/d/1LcitbyO4RIIkea6bkdH5R6eOH6UjM11k/edit?usp=sharing&ouid=104154946265606394823&rtpof=true&sd=true)
 
-### Sub-task 14 (improve CI build) — Optional
+### Sub-task 14 (move away from makefile in the operator component)
+By default, all kubebuilder projects are scaffolded with a Makefile. In the scope of this task, you will need to move away from makefile and start using Gradle.
+Gradle is really powerful and flexible. It entrusts the most core build rules to Plugin to complete. 
+In this way, the versatility of the build process is easily realized.
+
+The next tasks should be moved from Makefile to Gradle:
+1. `manifests`
+2. `generate`
+3. `tests`
+4. `dockerBuild`
+5. `dockerPush`
+6. `deploy`
+7. `undeploy`
+
+### Sub-task 15 (improve CI build) — Optional
 At this point, the CI can be improved and can be smarter. It should be able to do next:
 1. Run unit tests (functionality from the Sub task10).
 2. Create docker image for the key-value storage app.
