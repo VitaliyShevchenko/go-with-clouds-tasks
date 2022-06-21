@@ -380,6 +380,42 @@ In addition to that the following Gradle tasks should be added:
 2. `installChart` — installs chart on Kubernetes cluster
 3. `uninstallChart` — uninstalls chart from Kubernetes cluster
 
+A list of fields which a user can dynamically populate:
+1. Operator
+```yaml
+replicaCount: <replicaCount>
+
+imageName: <imageName>
+resources:
+  limits:
+    cpu: <cpu_limit>
+    memory: <memory_limit>
+  requests:
+    cpu: <cpu_request>
+    memory: <memory_request>
+
+autoscaling:
+  enabled: <enabled>
+  minReplicas: <minReplicas>
+  maxReplicas: <maxReplicas>
+  targetCPUUtilizationPercentage: <targetCPUUtilizationPercentage>
+```
+2. Storage
+```yaml
+replicaCount: <replicaCount>
+
+imageName: <imageName>
+resources:
+  limits:
+    cpu: <cpu_limit>
+    memory: <memory_limit>
+  requests:
+    cpu: <cpu_request>
+    memory: <memory_request>
+
+containerPort: <containerPort>
+```
+
 #### Something to read
 * [Helm official documentation](https://helm.sh/)
 * [What is, and what use cases have the dot "." in helm charts?](https://stackoverflow.com/questions/62472224/what-is-and-what-use-cases-have-the-dot-in-helm-charts)
