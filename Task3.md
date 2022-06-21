@@ -59,10 +59,6 @@ Build a simple HTTP server/client for the key-value storage project.
 - Must only match DELETE requests for **specific_uri** (you will have to choose the URI).
 - Must respond with a status 200 (Ok) indicating a successful deletion with additional information. In this case, the response
   body can contain the deleted resource or some details about the deletion.
-- Must respond with a status 204 (No content) indicating a successful deletion with no additional information (response body is
-  empty).
-- Must respond with a status 202 (Accepted) is returned if the server accepted the request, but the deletion has not been
-  completed.
 - Must respond with a 404 (Not found) if no resource exists at the given URI.
 
 **Note**: A good level of documentation and unit test coverage is required.
